@@ -9,8 +9,9 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] bool showCheckZones = false;
 
     private GameObject player;
-    private Vector2 playerDirection;
     private Rigidbody2D enemyRigidbody;
+
+    [SerializeField] private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,6 @@ public class EnemyMovement : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, player.transform.position) < engageRange)
         {
-
             enemyRigidbody.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime));
         }
     }
@@ -36,6 +36,15 @@ public class EnemyMovement : MonoBehaviour
             // Draw a yellow sphere at the transform's position
             Gizmos.color = Color.green;
             Gizmos.DrawSphere(transform.position, engageRange);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("Player"))
+        {
+            Debug.Log("Game Over");
+            gameManager.GameOver();
         }
     }
 }

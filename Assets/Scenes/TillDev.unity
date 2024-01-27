@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameInput: {fileID: 1179850963}
-  playerSpeed: 1000
+  playerSpeed: 500
   smoothTime: 0.05
 --- !u!1 &545782953
 GameObject:
