@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour
 
     private GameObject player;
     private Rigidbody2D enemyRigidbody;
+    public bool enemyAgressive;
 
     [SerializeField] private GameManager gameManager;
 
@@ -25,7 +26,12 @@ public class EnemyMovement : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, player.transform.position) < engageRange)
         {
+            enemyAgressive = true;
             enemyRigidbody.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime));
+        }
+        else
+        {
+            enemyAgressive = false;
         }
     }
 
