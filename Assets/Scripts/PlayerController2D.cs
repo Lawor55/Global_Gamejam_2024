@@ -35,7 +35,7 @@ public class PlayerController2D : MonoBehaviour
             smoothTime
         );
 
-        rb.velocity = smoothedInput * (playerSpeed * Time.deltaTime);
+        rb.velocity = smoothedInput * playerSpeed;
         //Debug.Log(smoothedInput * (playerSpeed * Time.deltaTime));
     }
 }

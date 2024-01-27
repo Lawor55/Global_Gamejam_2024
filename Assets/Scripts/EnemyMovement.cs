@@ -24,10 +24,11 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, player.transform.position) < engageRange)
+        if (Vector2.Distance(transform.position, player.transform.position) <= engageRange)
         {
             enemyAgressive = true;
-            enemyRigidbody.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime));
+            //enemyRigidbody.MovePosition(Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime));
+            enemyRigidbody.velocity = (player.transform.position - transform.position).normalized * speed;
         }
         else
         {
@@ -39,7 +40,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (showCheckZones)
         {
-            // Draw a yellow sphere at the transform's position
+            // Draw a green sphere at the transform's position to display engageRange
             Gizmos.color = Color.green;
             Gizmos.DrawSphere(transform.position, engageRange);
         }
