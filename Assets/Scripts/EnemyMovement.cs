@@ -10,7 +10,7 @@ public class EnemyMovement : MonoBehaviour
 
     private GameObject player;
     private Rigidbody2D enemyRigidbody;
-    public bool enemyAgressive;
+    [HideInInspector] public bool enemyAgressive;
 
     [SerializeField] private GameManager gameManager;
 
