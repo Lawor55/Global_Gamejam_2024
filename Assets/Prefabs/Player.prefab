@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameInput: {fileID: 0}
-  playerSpeed: 10
+  playerSpeed: 3
   smoothTime: 0.1
 --- !u!50 &7991247717071992372
 Rigidbody2D:
