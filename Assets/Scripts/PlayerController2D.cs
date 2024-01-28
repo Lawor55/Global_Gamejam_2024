@@ -10,7 +10,8 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField] private float smoothTime = .1f;
 
     private GameInput gameInput;
-
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
 
     private Vector2 smoothedInput;
@@ -20,6 +21,8 @@ public class PlayerController2D : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         gameInput = gameManager.GetComponent<GameInput>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -40,6 +43,18 @@ public class PlayerController2D : MonoBehaviour
 
         rb.velocity = smoothedInput * playerSpeed;
         //Debug.Log(smoothedInput * (playerSpeed * Time.deltaTime));
+
+        if (inputVector.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (inputVector.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else
+        {
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
