@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] AudioClip deathSound;
     [HideInInspector] public bool isGameOver;
     [HideInInspector] public bool died = false;
-    public GameObject deathScreen;
-    public GameObject winScreen;
+    [SerializeField] private GameObject deathScreen;
+    [SerializeField] private GameObject winScreen;
+    [SerializeField] private GameObject restartButton;
+    
     private AudioSource audioSource;
 
     private void Start()
@@ -33,6 +36,7 @@ public class GameManager : MonoBehaviour
 
         FreezeTime(true);
         deathScreen.SetActive(true);
+        restartButton.SetActive(true);
         Debug.Log("Game Over");
         isGameOver = true;
     }
@@ -41,5 +45,13 @@ public class GameManager : MonoBehaviour
     {
         winScreen.SetActive(true);
         GameOver();
+    }
+
+    public void Restart()
+    {
+        restartButton.SetActive(false);
+        FreezeTime(false);
+        isGameOver = false;
+        SceneManager.LoadScene(0);
     }
 }
