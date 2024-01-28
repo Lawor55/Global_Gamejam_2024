@@ -1034,6 +1034,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -31, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -5, y: -6, z: 0}
     second:
       serializedVersion: 2
@@ -2880,13 +2890,21 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 3eda1c70beb08c14b9c5d4d891bae789, type: 2}
   - m_RefCount: 9
     m_Data: {fileID: 11400000, guid: 5449e4497f95188438f66b5981f09824, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: af835a6f775fa4240800d660c1b37dd7, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 257
     m_Data: {fileID: 21300000, guid: 0e77531062db3d6448d1b7feb209cb1a, type: 3}
   - m_RefCount: 9
     m_Data: {fileID: 21300000, guid: 8d5843674a84f9949814965606c43d11, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 4ac52952f0d3475429c5ffd1ba2c913c, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 266
+  - m_RefCount: 267
     m_Data:
       e00: 1
       e01: 0
@@ -2905,13 +2923,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 266
+  - m_RefCount: 267
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -30, y: -19, z: 0}
-  m_Size: {x: 46, y: 50, z: 1}
+  m_Color: {r: 0.7444637, g: 0.7154424, b: 0.64772606, a: 1}
+  m_Origin: {x: -31, y: -19, z: 0}
+  m_Size: {x: 47, y: 50, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -2941,7 +2959,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: speed
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: engageRange
@@ -3075,7 +3093,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: speed
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: engageRange
@@ -3146,6 +3164,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
+      propertyPath: speed
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: gameManager
       value: 
@@ -3238,7 +3260,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -3296,7 +3318,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: speed
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: engageRange
@@ -3369,7 +3391,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: speed
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: engageRange
@@ -3442,7 +3464,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: speed
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: engageRange
@@ -3691,7 +3713,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: speed
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: engageRange
@@ -10378,7 +10400,7 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.71483254, g: 0.43768185, b: 0.40617064, a: 1}
   m_Origin: {x: -29, y: -19, z: 0}
   m_Size: {x: 44, y: 48, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -10410,7 +10432,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: speed
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: engageRange
@@ -10704,7 +10726,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: speed
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: engageRange
@@ -16087,7 +16109,7 @@ Tilemap:
     m_Data: {r: 6.8624e-41, g: 6.8624e-41, b: 6.8624e-41, a: 6.8624e-41}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.754717, g: 0.70119864, b: 0.6016376, a: 1}
   m_Origin: {x: -30, y: -20, z: 0}
   m_Size: {x: 47, y: 50, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -16280,7 +16302,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: speed
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: engageRange
@@ -16442,7 +16464,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: speed
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3607164555431852285, guid: b5bb3e7265afb59418c38da6b4c91555, type: 3}
       propertyPath: engageRange
@@ -16609,6 +16631,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1727910934}
+    - target: {fileID: 6410974371813557135, guid: 39dcaf262d4730042a47e07a63931e1e, type: 3}
+      propertyPath: playerSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8650530897973627929, guid: 39dcaf262d4730042a47e07a63931e1e, type: 3}
       propertyPath: m_SortingOrder
       value: 7
