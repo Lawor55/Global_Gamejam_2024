@@ -12,10 +12,10 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody2D enemyRigidbody;
     [HideInInspector] public bool enemyAgressive;
 
-    [SerializeField] private GameManager gameManager;
+    public GameManager gameManager;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         enemyRigidbody = GetComponent<Rigidbody2D>();
@@ -51,6 +51,7 @@ public class EnemyMovement : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
         {
             Debug.Log("Game Over");
+            gameManager.died = true;
             gameManager.GameOver();
         }
     }

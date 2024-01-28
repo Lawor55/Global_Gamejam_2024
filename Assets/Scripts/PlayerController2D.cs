@@ -5,9 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController2D : MonoBehaviour
 {
-    [SerializeField] private GameInput gameInput;
+    [SerializeField] private GameObject gameManager;
     [SerializeField] private float playerSpeed;
     [SerializeField] private float smoothTime = .1f;
+
+    private GameInput gameInput;
 
     private Rigidbody2D rb;
 
@@ -17,6 +19,7 @@ public class PlayerController2D : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        gameInput = gameManager.GetComponent<GameInput>();
     }
 
     private void Update()
@@ -37,5 +40,13 @@ public class PlayerController2D : MonoBehaviour
 
         rb.velocity = smoothedInput * playerSpeed;
         //Debug.Log(smoothedInput * (playerSpeed * Time.deltaTime));
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("Exit"))
+        {
+            gameManager.GetComponent<GameManager>().GameWon();
+        }
     }
 }

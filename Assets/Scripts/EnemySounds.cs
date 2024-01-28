@@ -16,6 +16,7 @@ public class EnemySounds : MonoBehaviour
     [SerializeField] private AudioClip[] enemySounds;
     private EnemyMovement enemyMovement;
 
+    private GameManager gameManager;
     private AudioSource audioSource;
     private float audioCooldownIdle;
     private float audioCooldownAgressive;
@@ -23,6 +24,8 @@ public class EnemySounds : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GetComponent<EnemyMovement>().gameManager;
+
         audioSource = GetComponent<AudioSource>();
         enemyMovement = GetComponent<EnemyMovement>();
 
@@ -32,6 +35,11 @@ public class EnemySounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameManager.isGameOver)
+        {
+            audioSource.volume = 0;
+        }
+
         if (enemyMovement.enemyAgressive)
         {
             if (audioCooldownAgressive <= 0)
@@ -66,6 +74,10 @@ public class EnemySounds : MonoBehaviour
 
     void PlaySound()
     {
+        if (gameManager.isGameOver)
+        {
+            return;
+        }
         int randomSound = Random.Range(0, enemySounds.Length);
         Debug.Log("Selected random Sound: " + randomSound + ": " + enemySounds[randomSound].name);
         if (!audioSource.isPlaying)
