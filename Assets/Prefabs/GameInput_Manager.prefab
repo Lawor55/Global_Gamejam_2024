@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathSound: {fileID: 8300000, guid: bcf8e9b15048be3469a3fbf4826e2840, type: 3}
+  isGameOver: 0
   died: 0
   deathScreen: {fileID: 4679066304772116344}
   winScreen: {fileID: 5935206582058619808}
