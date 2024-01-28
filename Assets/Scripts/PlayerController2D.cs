@@ -47,13 +47,20 @@ public class PlayerController2D : MonoBehaviour
         if (inputVector.x < 0)
         {
             spriteRenderer.flipX = true;
+            animator.SetBool("Walking", true);
         }
         else if (inputVector.x > 0)
         {
             spriteRenderer.flipX = false;
+            animator.SetBool("Walking", true);
+        }
+        else if (inputVector.y != 0)
+        {
+            animator.SetBool("Walking", true);
         }
         else
         {
+            animator.SetBool("Walking", false);
         }
     }
 
