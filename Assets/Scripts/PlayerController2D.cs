@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEditor.Rendering;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController2D : MonoBehaviour
@@ -8,10 +6,12 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField] private GameObject gameManager;
     [SerializeField] private float playerSpeed;
     [SerializeField] private float smoothTime = .1f;
+    [SerializeField] private AudioClip[] footstepSounds;
 
     private GameInput gameInput;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    private AudioSource audioSource;
     private Rigidbody2D rb;
 
     private Vector2 smoothedInput;
@@ -23,6 +23,7 @@ public class PlayerController2D : MonoBehaviour
         gameInput = gameManager.GetComponent<GameInput>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -48,19 +49,31 @@ public class PlayerController2D : MonoBehaviour
         {
             spriteRenderer.flipX = true;
             animator.SetBool("Walking", true);
+            StepSound();
         }
         else if (inputVector.x > 0)
         {
             spriteRenderer.flipX = false;
             animator.SetBool("Walking", true);
+            StepSound();
         }
         else if (inputVector.y != 0)
         {
             animator.SetBool("Walking", true);
+            StepSound();
         }
         else
         {
             animator.SetBool("Walking", false);
+        }
+    }
+
+    private void StepSound()
+    {
+        if (!audioSource.isPlaying)
+        {
+            int randomSound = Random.Range(0, footstepSounds.Length);
+            audioSource.PlayOneShot(footstepSounds[randomSound]);
         }
     }
 

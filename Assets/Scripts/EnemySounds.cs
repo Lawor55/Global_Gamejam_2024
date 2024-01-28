@@ -46,7 +46,7 @@ public class EnemySounds : MonoBehaviour
             {
                 PlaySound();
                 audioCooldownAgressive = Random.Range(agressiveSoundMin, agressiveSoundMin + agressiveSoundVariation);
-                Debug.Log("Agressive Cooldown");
+                //Debug.Log("Agressive Cooldown");
             }
             else
             {
@@ -63,7 +63,7 @@ public class EnemySounds : MonoBehaviour
             {
                 PlaySound();
                 audioCooldownIdle = Random.Range(idleSoundMin, idleSoundMin + idleSoundVariation);
-                Debug.Log("Idle Cooldown");
+                //Debug.Log("Idle Cooldown");
             }
             else
             {
@@ -79,7 +79,7 @@ public class EnemySounds : MonoBehaviour
             return;
         }
         int randomSound = Random.Range(0, enemySounds.Length);
-        Debug.Log("Selected random Sound: " + randomSound + ": " + enemySounds[randomSound].name);
+        //Debug.Log("Selected random Sound: " + randomSound + ": " + enemySounds[randomSound].name);
         if (!audioSource.isPlaying)
         {
             audioSource.PlayOneShot(enemySounds[randomSound]);
