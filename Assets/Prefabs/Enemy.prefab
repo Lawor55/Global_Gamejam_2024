@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   engageRange: 5
-  speed: 1.5
+  speed: 2.5
   showCheckZones: 1
   enemyAgressive: 0
   gameManager: {fileID: 0}

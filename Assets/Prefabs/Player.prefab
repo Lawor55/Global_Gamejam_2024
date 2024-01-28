@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b18817b5314aa8b4498a70a05ee32f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  playerSpeed: 5
+  gameManagerObject: {fileID: 0}
+  playerSpeed: 3
   smoothTime: 0.1
   footstepSounds:
   - {fileID: 8300000, guid: 0fc3d0a7f2297350a91adea89914eae7, type: 3}

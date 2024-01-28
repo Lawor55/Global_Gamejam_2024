@@ -3,7 +3,7 @@
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController2D : MonoBehaviour
 {
-    [SerializeField] private GameObject gameManager;
+    [SerializeField] private GameObject gameManagerObject;
     [SerializeField] private float playerSpeed;
     [SerializeField] private float smoothTime = .1f;
     [SerializeField] private AudioClip[] footstepSounds;
@@ -13,6 +13,7 @@ public class PlayerController2D : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private AudioSource audioSource;
     private Rigidbody2D rb;
+    private GameManager gameManager;
 
     private Vector2 smoothedInput;
     private Vector2 inputVelocity;
@@ -20,14 +21,19 @@ public class PlayerController2D : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        gameInput = gameManager.GetComponent<GameInput>();
+        gameInput = gameManagerObject.GetComponent<GameInput>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
+        gameManager = gameManagerObject.GetComponent<GameManager>();
     }
 
     private void Update()
     {
+        if (gameManager.isGameOver)
+        {
+            audioSource.volume = 0;
+        }
         Move();
     }
 
@@ -81,7 +87,7 @@ public class PlayerController2D : MonoBehaviour
     {
         if (collision.transform.CompareTag("Exit"))
         {
-            gameManager.GetComponent<GameManager>().GameWon();
+            gameManagerObject.GetComponent<GameManager>().GameWon();
         }
     }
 }

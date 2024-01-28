@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
     public void FreezeTime(bool freeze)
     {
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
         FreezeTime(true);
         deathScreen.SetActive(true);
         restartButton.SetActive(true);
+        Cursor.lockState = CursorLockMode.Confined;
         Debug.Log("Game Over");
         isGameOver = true;
     }
